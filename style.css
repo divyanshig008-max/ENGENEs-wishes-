@@ -1,0 +1,469 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #050816;
+    color: white;
+    font-family: Georgia, serif;
+    overflow: hidden;
+}
+
+.screen {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.screen.active {
+    display: flex;
+}
+
+
+/* HOME */
+
+#home {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 50% 45%, #18244d 0%, #080d25 40%, #030510 100%);
+}
+
+.welcome {
+    position: relative;
+    z-index: 5;
+    padding: 25px;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    opacity: .75;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(30px, 8vw, 65px);
+    line-height: 1.15;
+    font-weight: normal;
+}
+
+.tagline {
+    margin-top: 18px;
+    opacity: .75;
+    font-size: 15px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#enterBtn,
+#sendWish {
+    margin-top: 30px;
+    padding: 15px 25px;
+
+    color: white;
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 30px;
+
+    letter-spacing: 2px;
+
+    backdrop-filter: blur(10px);
+}
+
+#enterBtn:hover,
+#sendWish:hover {
+    background: rgba(255,255,255,.18);
+}
+
+
+/* MEMBERS */
+
+#members {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        radial-gradient(circle, #17234c, #060a1d 60%, #02030b);
+}
+
+.member-section {
+    width: min(90%, 650px);
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 35px;
+}
+
+.members {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.member {
+    min-height: 80px;
+
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 20px;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    letter-spacing: 2px;
+}
+
+.member:hover {
+    background: rgba(255,255,255,.12);
+}
+
+.member:first-letter {
+    font-size: 20px;
+}
+
+
+/* WISH FORM */
+
+#wishScreen {
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 50% 40%, #192653, #05091d 65%, #02030a);
+}
+
+.wish-card {
+    width: min(90%, 480px);
+
+    padding: 30px;
+
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+}
+
+.wish-card h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    margin-top: 20px;
+
+    opacity: .85;
+}
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 13px;
+
+    color: white;
+
+    background: rgba(0,0,0,.25);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+select option {
+    color: black;
+}
+
+.text-button {
+    display: block;
+
+    margin: 18px auto 0;
+
+    color: white;
+
+    background: transparent;
+
+    opacity: .65;
+}
+
+
+/* UNIVERSE */
+
+#universe {
+    background: #02030b;
+    overflow: hidden;
+}
+
+#space {
+    position: absolute;
+
+    width: 4000px;
+    height: 4000px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(circle at 50% 50%, #101b3c, #030510 55%, #010207);
+}
+
+#universeStars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 7px currentColor,
+        0 0 18px currentColor;
+
+    cursor: pointer;
+
+    animation: twinkle 2.5s infinite alternate;
+}
+
+@keyframes twinkle {
+
+    from {
+        opacity: .55;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+
+/* YELLOW POINT */
+
+#yellowPoint {
+
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    width: 13px;
+    height: 13px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #ffe36e;
+
+    box-shadow:
+        0 0 10px #ffe36e,
+        0 0 30px #ffe36e;
+
+    z-index: 20;
+}
+
+
+/* FILTERS */
+
+#filters {
+
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 15px;
+
+    display: flex;
+
+    gap: 7px;
+
+    padding: 10px;
+
+    overflow-x: auto;
+
+    z-index: 30;
+
+    justify-content: flex-start;
+}
+
+.filter {
+
+    flex-shrink: 0;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.filter.active {
+    background: rgba(255,255,255,.22);
+}
+
+
+/* MESSAGE */
+
+#message {
+
+    position: fixed;
+
+    top: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 12px 18px;
+
+    background: rgba(255,255,255,.08);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    font-size: 12px;
+
+    opacity: 0;
+
+    transition: opacity .5s;
+
+    z-index: 40;
+}
+
+#message.show {
+    opacity: 1;
+}
+
+
+/* POPUP */
+
+#wishPopup {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,.55);
+
+    z-index: 100;
+}
+
+#wishPopup.show {
+    display: flex;
+}
+
+.popup-card {
+
+    position: relative;
+
+    width: min(85%, 400px);
+
+    padding: 30px;
+
+    background: rgba(15,20,50,.9);
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(20px);
+
+    text-align: center;
+}
+
+#closePopup {
+
+    position: absolute;
+
+    right: 15px;
+    top: 10px;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 25px;
+}
+
+.popup-card p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: .7;
+}
+
+.popup-card h3 {
+    margin: 18px 0;
+}
+
+#popupWish {
+    line-height: 1.7;
+    opacity: .9;
+}
+
+#popupMember {
+    display: block;
+    margin-top: 20px;
+    opacity: .6;
+      }
