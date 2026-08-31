@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wishes from ENGENEs for ENHYPEN</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HOME -->
+    <main id="home" class="screen active">
+
+        <div class="stars"></div>
+
+        <section class="welcome">
+            <p class="small-title">✦ A SKY MADE OF WISHES ✦</p>
+
+            <h1>
+                Wishes from<br>
+                ENGENEs for ENHYPEN
+            </h1>
+
+            <p class="tagline">
+                From our hearts to their sky. ✦
+            </p>
+
+            <button id="enterBtn">
+                ENTER THE SKY
+            </button>
+        </section>
+
+    </main>
+
+
+    <!-- MEMBER SELECTION -->
+    <main id="members" class="screen">
+
+        <section class="member-section">
+
+            <p class="small-title">A WISH FOR</p>
+
+            <h2>ENHYPEN</h2>
+
+            <div class="members">
+
+                <button class="member" data-member="Jungwon">
+                    ✦<span>JUNGWON</span>
+                </button>
+
+                <button class="member" data-member="Heeseung">
+                    ✦<span>HEESEUNG</span>
+                </button>
+
+                <button class="member" data-member="Jay">
+                    ✦<span>JAY</span>
+                </button>
+
+                <button class="member" data-member="Jake">
+                    ✦<span>JAKE</span>
+                </button>
+
+                <button class="member" data-member="Sunghoon">
+                    ✦<span>SUNGHOON</span>
+                </button>
+
+                <button class="member" data-member="Sunoo">
+                    ✦<span>SUNOO</span>
+                </button>
+
+                <button class="member" data-member="Ni-ki">
+                    ✦<span>NI-KI</span>
+                </button>
+
+                <button class="member" data-member="OT7">
+                    ✦<span>OT7</span>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- WISH FORM -->
+    <main id="wishScreen" class="screen">
+
+        <section class="wish-card">
+
+            <p class="small-title">A WISH FOR</p>
+
+            <h2 id="selectedMember">SUNOO</h2>
+
+            <label>
+                YOUR NAME
+                <input
+                    id="nameInput"
+                    type="text"
+                    maxlength="30"
+                    placeholder="A nickname..."
+                >
+            </label>
+
+            <label>
+                YOUR WISH
+                <textarea
+                    id="wishInput"
+                    maxlength="300"
+                    placeholder="Write your wish here..."
+                ></textarea>
+            </label>
+
+            <label>
+                STAYS IN THE SKY
+                <select id="duration">
+                    <option value="forever">FOREVER</option>
+                    <option value="1day">1 DAY</option>
+                    <option value="7days">7 DAYS</option>
+                    <option value="1month">1 MONTH</option>
+                    <option value="3months">3 MONTHS</option>
+                </select>
+            </label>
+
+            <button id="sendWish">
+                ✦ SEND INTO THEIR SKY
+            </button>
+
+            <button id="backToMembers" class="text-button">
+                ← CHANGE MEMBER
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- UNIVERSE -->
+    <main id="universe" class="screen">
+
+        <div id="space">
+
+            <div id="universeStars"></div>
+
+        </div>
+
+        <!-- FIXED YELLOW POINT -->
+        <div id="yellowPoint"></div>
+
+        <!-- FILTER BAR -->
+        <nav id="filters">
+
+            <button class="filter active" data-filter="all">
+                ALL
+            </button>
+
+            <button class="filter" data-filter="Jungwon">
+                JUNGWON
+            </button>
+
+            <button class="filter" data-filter="Heeseung">
+                HEESEUNG
+            </button>
+
+            <button class="filter" data-filter="Jay">
+                JAY
+            </button>
+
+            <button class="filter" data-filter="Jake">
+                JAKE
+            </button>
+
+            <button class="filter" data-filter="Sunghoon">
+                SUNGHOON
+            </button>
+
+            <button class="filter" data-filter="Sunoo">
+                SUNOO
+            </button>
+
+            <button class="filter" data-filter="Ni-ki">
+                NI-KI
+            </button>
+
+            <button class="filter" data-filter="OT7">
+                OT7
+            </button>
+
+        </nav>
+
+        <div id="message">
+            ✦ Your wish has joined the sky.
+        </div>
+
+    </main>
+
+
+    <!-- WISH POPUP -->
+    <div id="wishPopup">
+
+        <div class="popup-card">
+
+            <button id="closePopup">×</button>
+
+            <p>✦ A WISH FROM THE SKY</p>
+
+            <h3 id="popupName"></h3>
+
+            <div id="popupWish"></div>
+
+            <small id="popupMember"></small>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
